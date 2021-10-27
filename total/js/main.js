@@ -17,8 +17,13 @@ $('.lnb li button').click(function(){
     $(this).toggleClass('on')
 });
 
-
-
+//
+$('#list1').click(function(){
+    $('.list-box1').fadeIn();
+});
+$('.list-box1 .close').click(function(){
+    $('.list-box1').fadeOut();
+});
 
 
 });

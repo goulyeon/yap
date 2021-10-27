@@ -6,6 +6,11 @@ body{
     font-family: 'Nanum Gothic', sans-serif;
 }
 
+.front{
+    
+}
+
+/* 메뉴 바 */
 .menu{
     position: absolute;
     bottom: 15%; width: 750px;
@@ -15,7 +20,7 @@ body{
     left: 50%; transform: translateX(-50%);
 }
 .menu .left{float: left; width: 700px;}
-
+/* 메뉴 바 - gnb */
 .menu .gnb{background: #111;}
 .menu .gnb::after{clear: both; content: ''; display: block;}
 .menu .gnb li{
@@ -32,24 +37,37 @@ body{
     transition: all 0.3s;
 }
 .menu .gnb li.on a{color: #fff;}
-
 .menu .gnb li:hover a{color: #fff;}
 
+/* 메뉴 바 - lnb */
 .menu .lnb{
     background: #444; height: 60px;
     box-sizing: border-box; border-right: 1px solid #666;
 }
 .menu .lnb::after{clear: both; content: ''; display: block;}
 .menu .lnb .l-box{float: left;}
-.menu .lnb .l-box li{float: left; padding: 20px;}
+.menu .lnb .l-box li{float: left; padding: 20px; position: relative;}
 .menu .lnb .l-box li button.on i{color: #aaa;}
 .menu .lnb .l-box li i{
     font-size: 20px; color: #111;
     transition: all 0.3s;
 }
+.menu .lnb .l-box li p{
+    position: absolute; 
+    left: 50%; transform: translateX(-50%);
+    bottom: -24px; text-align: center;
+    background: #111;
+    border-radius: 10px;
+    color: #aaa; font-size: 12px;
+    padding: 10px 0;
+    width: 80px;
+    opacity: 0; transition: all 0.3s;
+}
+.menu .lnb .l-box li:hover p{opacity: 1;}
 
 .menu .lnb .r-box{float: right;}
 
+/* 메뉴 바 - 메뉴온오프 */
 .menu .menu-bt{
     width: 50px; height: 120px; background: #111; 
     float: left; position: relative;
@@ -82,3 +100,70 @@ body{
 .menu .lnb .r-box li input[type=radio]:checked ~ label{
     color: #FF7B54;
 }
+
+/* 무형유산 */
+.list-box1{
+    max-width: 1600px;
+    width: 70%; height: 60vh;
+    position: absolute;
+    top: 8%; left: 50%; transform: translateX(-50%);
+    background: #444;
+    padding: 24px; box-sizing: border-box;
+    display: none;
+}
+.list-box1 .in{
+    width: 100%; height: 90%;
+    margin: 0 auto;
+    overflow: auto;
+    max-width: 1080px;
+}
+.list-box1 h2{
+    color: #fff;
+    margin-bottom: 24px;
+    text-align: center;
+}
+.list-box1 ul{}
+.list-box1 ul::after{clear: both; content: ''; display: block;}
+.list-box1 ul li{
+    float: left;
+    width: 23%; margin: 1%;
+    position: relative;
+}
+.list-box1 ul li .img-box{
+    background: #aaa;
+    position: relative;
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 50%;
+}
+.list-box1 ul li .img-box div{
+    position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+}
+.list-box1 ul li h4{
+    line-height: 20px; height: 40px;
+    color: #fff; font-weight: 400;
+    font-size: 14px; margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.list-box1 .close{
+    position: absolute; right: 24px; top: 24px;
+    color: #aaa; font-size: 20px;
+}
+
+
+
+
+
+
+
+
