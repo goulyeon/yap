@@ -10,6 +10,8 @@ $('.menu .menu-bt').click(function(){
 $('.gnb li').click(function(){
     $('.gnb li').removeClass();
     $(this).addClass('on');
+    
+    $('.pop').hide();
 });
 
 // 버튼
