@@ -1,0 +1,84 @@
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+a{text-decoration: none; color: #000;}
+button{background: none; border: none; cursor: pointer;}
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.menu{
+    position: absolute;
+    bottom: 15%; width: 750px;
+    left: -700px; transition: all 0.5s;
+}
+.menu.on{
+    left: 50%; transform: translateX(-50%);
+}
+.menu .left{float: left; width: 700px;}
+
+.menu .gnb{background: #111;}
+.menu .gnb::after{clear: both; content: ''; display: block;}
+.menu .gnb li{
+    float: left; width: 20%; height: 60px; 
+    box-sizing: border-box;
+    border-right: 1px solid #666;
+    transition: all 0.3s;
+}
+.menu .gnb li.on{border-bottom: 3px solid #FF7B54;}
+.menu .gnb li a{
+    color: #aaa; font-size: 18px; 
+    display: block; line-height: 60px; 
+    text-align: center;
+    transition: all 0.3s;
+}
+.menu .gnb li.on a{color: #fff;}
+
+.menu .gnb li:hover a{color: #fff;}
+
+.menu .lnb{
+    background: #444; height: 60px;
+    box-sizing: border-box; border-right: 1px solid #666;
+}
+.menu .lnb::after{clear: both; content: ''; display: block;}
+.menu .lnb .l-box{float: left;}
+.menu .lnb .l-box li{float: left; padding: 20px;}
+.menu .lnb .l-box li button.on i{color: #aaa;}
+.menu .lnb .l-box li i{
+    font-size: 20px; color: #111;
+    transition: all 0.3s;
+}
+
+.menu .lnb .r-box{float: right;}
+
+.menu .menu-bt{
+    width: 50px; height: 120px; background: #111; 
+    float: left; position: relative;
+    transition: all 0.3s;  cursor: pointer;
+}
+.menu .menu-bt p{
+    position: absolute; color: #aaa;
+    top: 50%;  text-align: center;
+    transform: translateY(-50%) rotate(90deg);
+    transition: all 0.3s;
+}
+.menu .menu-bt:hover{background: #FF7B54;}
+.menu .menu-bt:hover p{color: #fff;}
+
+.menu .lnb .r-box li{
+    float: left; height: 60px;
+}
+.menu .lnb .r-box li input[type=radio]{
+    position: absolute;
+    visibility: hidden;
+}
+.menu .lnb .r-box li label{
+    display: block; color: #aaa;
+    padding: 0 14px; margin: 21px 0;
+    font-size: 15px; cursor: pointer;
+}
+.menu .lnb .r-box li label.br{
+    border-right: 1px solid #aaa;
+}
+.menu .lnb .r-box li input[type=radio]:checked ~ label{
+    color: #FF7B54;
+}
