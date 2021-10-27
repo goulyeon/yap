@@ -1,0 +1,56 @@
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+a{text-decoration: none; color: #000;}
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.menu{
+    position: absolute;
+    bottom: 15%; width: 750px;
+    left: -700px; transition: all 0.5s;
+}
+.menu.on{
+    left: 50%; transform: translateX(-50%);
+}
+.menu .left{float: left; width: 700px;}
+
+.menu .gnb{background: #111;}
+.menu .gnb::after{clear: both; content: ''; display: block;}
+.menu .gnb li{
+    float: left; width: 20%; height: 60px; 
+    box-sizing: border-box;
+    border-right: 1px solid #666;
+    transition: all 0.3s;
+}
+.menu .gnb li.on{border-bottom: 3px solid #FF7B54;}
+.menu .gnb li a{
+    color: #aaa; font-size: 18px; 
+    display: block; line-height: 60px; 
+    text-align: center;
+    transition: all 0.3s;
+}
+.menu .gnb li.on a{color: #fff;}
+
+.menu .gnb li:hover a{color: #fff;}
+
+.menu .lnb{
+    background: #444; height: 60px;
+    box-sizing: border-box; border-right: 1px solid #666;
+}
+.menu .lnb::after{clear: both; content: ''; display: block;}
+.menu .lnb li{float: left; padding: 20px;}
+.menu .lnb li img{height: 20px;}
+.menu .lnb li.lang{}
+.menu .lnb li.lang .lang-list{}
+.menu .lnb li.lang .lang-list li{}
+
+.menu .menu-bt{
+    width: 50px; height: 120px; background: #111; 
+    float: left; position: relative;
+}
+.menu .menu-bt p{
+    position: absolute; color: #aaa;
+    top: 50%; cursor: pointer;
+    transform: translateY(-50%) rotate(90deg); text-align: center;
+}
