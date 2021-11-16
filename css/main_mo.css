@@ -54,12 +54,15 @@
     position: relative;
     width: 49%;
 }
+.menu .lnb .l-box li:hover p{opacity: 0;}
 
 /* 메뉴 바 - 메뉴온오프 */
 .menu .menu-bt{
     width: 15%;
     margin-top: 20%;
 }
+.menu .menu-bt:hover{background: #111;}
+.menu .menu-bt:hover p{color: #aaa;}
 
 /* 3d에셋 */
 .pop{
