@@ -91,7 +91,7 @@
 /* 하단 페이지 네비게이션 */
 
 .page-nav.mo{
-    width: 80%;
+    width: 70%;
     position: fixed;
     bottom: 8%; left: 50%; transform: translateX(-50%);
     overflow: unset;
@@ -101,7 +101,7 @@
     display: flex;
 }
 .page-nav ul li{
-    height: 10px; background: #fff;
+    height: 16px; background: #fff;
     border-radius: 6px;
     position: relative;
 }
