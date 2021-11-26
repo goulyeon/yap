@@ -111,7 +111,7 @@ a:link, a:visited {
   border: none;
 }
 
-#enterxr {
+/* #enterxr {
   display: none;
   position: absolute;
   height: 100px;
@@ -132,7 +132,7 @@ a:link, a:visited {
 #enterxr:hover,
 #instruction button {
   background-color: #198EFB;
-}
+} */
 
 #instruction {
   align-items: center;
