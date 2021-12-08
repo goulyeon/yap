@@ -55,7 +55,7 @@
     <script src="Build/UnityLoader.js"></script>
     <script>
         UnityLoader.SystemInfo.mobile = false;  // Workaround to force `UnityLoader` to actually load on mobile.
-        window.gameInstance = UnityLoader.instantiate('gameContainer', 'Build/InTangibleHeritageBuild1103.json', {
+        window.gameInstance = UnityLoader.instantiate('gameContainer', 'Build/1129IntangibleHeritage01.json', {
             Module: {
                 // `preserveDrawingBuffer` is needed for WebVR content to be mirrored to the `<canvas>`.
                 webglContextAttributes: {
@@ -364,31 +364,31 @@
         <!-- 페이지네비 피씨 -->
         <div class="page-nav pc">
             <ul>
-                <li class="on pagenav" onclick="cssbutton(0)">
+                <!-- <li class="on pagenav" onclick="cssbutton(0)">
                     <div class="on pagenavdiv "></div>
                     <p class="on pagenavp">start</p>
+                </li> -->
+                <li class="on pagenav" onclick="cssbutton(0)">
+                    <div class="on pagenavdiv"></div>
+                    <p class="on pagenavp">택견</p>
                 </li>
                 <li class="pagenav" onclick="cssbutton(1)">
                     <div class="pagenavdiv"></div>
-                    <p class="pagenavp">택견</p>
+                    <p class="pagenavp">판소리</p>
                 </li>
                 <li class="pagenav" onclick="cssbutton(2)">
                     <div class="pagenavdiv"></div>
-                    <p class="pagenavp">판소리</p>
+                    <p class="pagenavp">굿</p>
                 </li>
                 <li class="pagenav" onclick="cssbutton(3)">
                     <div class="pagenavdiv"></div>
-                    <p class="pagenavp">굿</p>
+                    <p class="pagenavp">처용무</p>
                 </li>
                 <li class="pagenav" onclick="cssbutton(4)">
                     <div class="pagenavdiv"></div>
-                    <p class="pagenavp">처용무</p>
-                </li>
-                <li class="pagenav" onclick="cssbutton(5)">
-                    <div class="pagenavdiv"></div>
                     <p class="pagenavp">수문장</p>
                 </li>
-                <li class="pagenav" onclick="cssbutton(6)">
+                <li class="pagenav" onclick="cssbutton(5)">
                     <div class="pagenavdiv" ></div>
                     <p class="pagenavp"> 궁궐 호위군<br>서열식 첩종의식</p>
                 </li>
@@ -397,31 +397,31 @@
         <!-- 페이지네비 모바일 -->
         <div class="swiper mySwiper page-nav mo">
             <ul class="swiper-wrapper">
-                <li class="swiper-slide pagenav" onclick="cssbutton(0)" id="on">
+                <!-- <li class="swiper-slide pagenav" onclick="cssbutton(0)" id="on">
                     <div class="pagenavdiv" id="on"></div>
                     <p class="pagenavp" id="on">start</p>
+                </li> -->
+                <li class="swiper-slide pagenav" onclick="cssbutton(0)"id="on">
+                    <div class="pagenavdiv"id="on"></div>
+                    <p class="pagenavp"id="on">택견</p>
                 </li>
                 <li class="swiper-slide pagenav" onclick="cssbutton(1)">
                     <div class="pagenavdiv"></div>
-                    <p class="pagenavp">택견</p>
+                    <p class="pagenavp">판소리</p>
                 </li>
                 <li class="swiper-slide pagenav" onclick="cssbutton(2)">
                     <div class="pagenavdiv"></div>
-                    <p class="pagenavp">판소리</p>
+                    <p class="pagenavp">굿</p>
                 </li>
                 <li class="swiper-slide pagenav" onclick="cssbutton(3)">
                     <div class="pagenavdiv"></div>
-                    <p class="pagenavp">굿</p>
+                    <p class="pagenavp">처용무</p>
                 </li>
                 <li class="swiper-slide pagenav" onclick="cssbutton(4)">
                     <div class="pagenavdiv"></div>
-                    <p class="pagenavp">처용무</p>
-                </li>
-                <li class="swiper-slide pagenav" onclick="cssbutton(5)">
-                    <div class="pagenavdiv"></div>
                     <p class="pagenavp">수문장</p>
                 </li>
-                <li class="swiper-slide pagenav" onclick="cssbutton(6)">
+                <li class="swiper-slide pagenav" onclick="cssbutton(5)">
                     <div class="pagenavdiv" ></div>
                     <p class="pagenavp"> 궁궐 호위군<br>서열식 첩종의식</p>
                 </li>

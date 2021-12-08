@@ -194,6 +194,7 @@ body{
     line-height: 20px; height: 40px;
     color: #fff; font-weight: 400;
     font-size: 14px; margin-top: 10px;
+    /* 14px */
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -239,9 +240,9 @@ body{
 .page-nav.pc ul li div.on{display: block;}
 .page-nav.pc ul li p{
     position: absolute;
-    font-size: 12px; text-align: center;
+    font-size: 16px; text-align: center;
     width: 120px;
-    bottom: -38px; left: 50%; transform: translateX(-50%);
+    bottom: -48px; left: 50%; transform: translateX(-50%);
     color: #fff;
     display: none;
 }
@@ -349,11 +350,19 @@ body{
 .video-pop-bg i:hover{color: #FF7B54;}
 
 .conbutton-bg{
-    position: fixed; z-index: 50;
+    /* position: fixed; z-index: 50;
     top: 0; left: 0;
     width: 100vw; height: 100vh;
     background: rgba(0, 0, 0, 0.5);
+    display: none; */
+
+    width: 74vw; height: 60vh;
+    position: fixed;
+    top: 40%; left: 50%; transform: translate(-50%,-50%);
+    background: #444;
+    padding: 24px; box-sizing: border-box;
     display: none;
+    z-index: 10;
 }
 
 .conbutton{
@@ -371,7 +380,27 @@ video {
   }
 
 
+@media (min-width: 481px) and (max-width: 670px) {
+    
+.menu .gnb li a{font-size: 13px;}
+.menu .lnb .r-box li{width: 48%;}
+.menu .lnb .r-box li label{font-size: 13px;}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
 
 
 

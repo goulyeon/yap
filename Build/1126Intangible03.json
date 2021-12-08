@@ -1,0 +1,16 @@
+{
+"companyName": "DefaultCompany",
+"productName": "KHeritage",
+"productVersion": "0.1",
+"dataUrl": "1126Intangible03.data.unityweb",
+"wasmCodeUrl": "1126Intangible03.wasm.code.unityweb",
+"wasmFrameworkUrl": "1126Intangible03.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.1f1"
+}

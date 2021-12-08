@@ -16,6 +16,11 @@
     this.gameContainer = document.getElementById('game');
     this.perfStatus = document.getElementById('performance');
 
+    this.enterXRButton2 = document.getElementById('testxr');
+
+
+    console.dir( this.enterXRButton2);
+
     // Unity GameObject name which we will SendMessage to
     this.unityObjectName = 'WebXRCameraSet';
 
@@ -89,6 +94,7 @@
       session.isImmersive = true;
       this.isInVRSession = true;
       this.vrSession = session;
+      console.log("session.isInVRSession : " +this.isInVRSession );
       this.onSessionStarted(session);
     });
   }
@@ -98,12 +104,14 @@
       console.warn('No VR display to exit VR mode');
       return;
     }
+    console.log("exitSession");
 
     this.vrSession.end();
   }
 
   XRManager.prototype.onEndSession = function (session) {
     if (session && session.end) {
+      console.log("onEndSession");
       session.end();
     }
     
@@ -114,16 +122,20 @@
     this.canvas.height = window.innerHeight * window.devicePixelRatio;
   }
 
-  XRManager.prototype.toggleVR = function () {
+  XRManager.prototype.toggleVR = function () {//[o^o] 이버튼 
     if (this.isVRSupported && this.isInVRSession && this.gameInstance) {
+      console.log("exitSession");
       this.exitSession();
     } else {
       this.requestPresent();
+      console.log("requestPresent");
+
     }
   }
 
   XRManager.prototype.keyUp = function (evt) {
     if (this.toggleVRKeyName && this.toggleVRKeyName === evt.key) {
+      console.log("keyUp");
       this.toggleVR();
     }
 
@@ -135,6 +147,7 @@
 
   XRManager.prototype.setGameInstance = function (gameInstance) {
     if (!this.gameInstance) {
+      console.log("setGameInstance !this.gameInstance");
       this.gameInstance = gameInstance;
       this.canvas = this.gameInstance.Module.canvas;
       this.resize();
@@ -314,6 +327,8 @@
   }
 
   XRManager.prototype.onSessionStarted = function (session) {
+    console.log("onSessionStarted");
+
     var onSessionEnded = this.onEndSession.bind(this);
     session.addEventListener('end', onSessionEnded);
 
@@ -333,6 +348,10 @@
         this.vrImmersiveRefSpace = refSpace;
         // Inform the session that we're ready to begin drawing.
         this.gameInstance.Module.InternalBrowser.requestAnimationFrame(this.rAFCB);
+
+        //test
+        //gameInstance.SendMessage('VideoCanvas', 'ShowVideoQuad');
+
       } else {
         this.xrInlineRefSpace = refSpace;
       }
@@ -353,6 +372,8 @@
     {
       this.canvas.width = glLayer.framebufferWidth;
       this.canvas.height = glLayer.framebufferHeight;
+      console.dir(this.canvas);
+
     }
 
     this.ctx.bindFramebuffer(this.ctx.FRAMEBUFFER, glLayer.framebuffer);

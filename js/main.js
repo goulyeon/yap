@@ -29,7 +29,7 @@ $(document).ready(function(){
     
     // 3d에셋 드롭다운
     $('.list-box1 .list-wrap .box .title i').click(function(){
-        $('.list-box1 .list-wrap .box .title i').parents('.title').siblings('ul').slideUp();
+    $('.list-box1 .list-wrap .box .title i').parents('.title').siblings('ul').slideUp();
         $(this).parents('.title').siblings('ul').slideDown();
     })
     
@@ -99,9 +99,6 @@ $(document).ready(function(){
     
 });//요기까지 제이쿼리
 
-
-
-
     
 function cssbutton(num) {
      gameInstance.SendMessage('MouseWheelMove', 'CSSButton', num);
@@ -112,6 +109,7 @@ var PageNav = document.getElementsByClassName("pagenav");
 var PageNavDiv = document.getElementsByClassName("pagenavdiv");
 var PageNavP = document.getElementsByClassName("pagenavp");
 console.log("PageNav.length : " + PageNav.length);
+console.dir(document.getElementsByClassName("pagenav"));
 
 
 function CamPositionToPageNav(x){
@@ -146,24 +144,50 @@ function selectPagNav(num)
 const boxbg = document.getElementsByClassName("conbutton-bg");
 var box = document.getElementsByClassName("url2");
 //con 버튼
-function Asset3DButtonJs(str){ //3D Asset버튼   
-    switch(str)
+function Asset3DButtonJs(str){ //3D Asset버튼
+    if(!window.isInVRSession)//VR이 아니면
     {
-        case "택견":
-            box[0].src = "https://sketchfab.com/models/04158af4fcdb4d6db43fd6ca4e575779/embed";
-            break;
-        case "판소리":
-            box[0].src ="https://sketchfab.com/models/984551b1a1ca4dea87550380d34c11a0/embed";
-            break;
-        case "굿":
-            box[0].src ="https://sketchfab.com/models/befd77162b034a82b35aeb0f373be3b4/embed";
-            break;
-        case "처용무":
-            box[0].src = "https://sketchfab.com/models/1bf7dae097a949a89fa20e398e4a8856/embed";
-            break;
-        case "수문장":
-            box[0].src = "https://sketchfab.com/models/176856191dde4bc2b497e5a0277b34b7/embed";
-            break;     
+        switch(str)
+        {
+            case "택견":
+                box[0].src = "https://sketchfab.com/models/04158af4fcdb4d6db43fd6ca4e575779/embed";
+
+                break;
+            case "판소리":
+                box[0].src ="https://sketchfab.com/models/984551b1a1ca4dea87550380d34c11a0/embed";
+                break;
+            case "굿":
+                box[0].src ="https://sketchfab.com/models/befd77162b034a82b35aeb0f373be3b4/embed";
+                break;
+            case "처용무":
+                box[0].src = "https://sketchfab.com/models/1bf7dae097a949a89fa20e398e4a8856/embed";
+                break;
+            case "수문장":
+                box[0].src = "https://sketchfab.com/models/176856191dde4bc2b497e5a0277b34b7/embed";
+                break;     
+            case "6.25":
+                box[0].src = "https://sketchfab.com/models/0ac0fc2c5a434f54bb50260741d214c8/embed";
+                break;
+            default:
+                box[0].src = "";
+                break;    
+        }
+    }   
+    else
+    {
+        console.log("Asset3DButtonJs isImmersive 아님");
+        //unity에 전달해서 videoplayer setActive true 로 만들기 
+        gameInstance.SendMessage('MouseWheelMove', 'CSSButton', num);// ?  이거 왜쓴거야
+        switch(str)
+        {
+            case "택견":
+                gameInstance.SendMessage('VideoCanvas', 'ShowVideoQuad');
+                break;
+            default:
+                console.log("디폴트 입니다");
+                break;    
+        }
+        
     }
     console.log("Asset3DButtonJs : " + str);
     boxbg[0].style.display="flex";
@@ -191,6 +215,13 @@ function VideoJs(str){//동영상버튼
 
 function ASMRJs(str){//디지털병풍버튼
     console.log("ASMRJs : " + str);
+}
+
+function ARUnityJs(str){//디지털병풍버튼
+    console.log("ARUnityJs : " + str);
+}
+function RealVRUnityJs(str){//디지털병풍버튼
+    console.log("RealVRUnityJs : " + str);
 }
 function closeConButton(){
     boxbg[0].style.display="none";

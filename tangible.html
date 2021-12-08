@@ -53,7 +53,7 @@
     <script src="Build/UnityLoader.js"></script>
     <script>
         UnityLoader.SystemInfo.mobile = false;  // Workaround to force `UnityLoader` to actually load on mobile.
-        window.gameInstance = UnityLoader.instantiate('gameContainer', 'Build/TangibleHeritageBuild1103.json', {
+        window.gameInstance = UnityLoader.instantiate('gameContainer', 'Build/1128Tangible02.json', {
             Module: {
                 // `preserveDrawingBuffer` is needed for WebVR content to be mirrored to the `<canvas>`.
                 webglContextAttributes: {
@@ -358,29 +358,33 @@
 
         <div class="page-nav pc">
             <ul>
-                <li class="on pagenav" onclick="cssbutton(0)">
+                <!-- <li class="on pagenav" onclick="cssbutton(0)">
                     <div class="on pagenavdiv "></div>
                     <p class="on pagenavp">start</p>
+                </li> -->
+                <li class="on pagenav" onclick="cssbutton(0)">
+                    <div class="on pagenavdiv"></div>
+                    <p class="on pagenavp">6.25 전쟁</p>
                 </li>
                 <li class="pagenav" onclick="cssbutton(1)">
                     <div class="pagenavdiv"></div>
-                    <p class="pagenavp">6.25 전쟁</p>
+                    <p class="pagenavp">소대헌</p>
                 </li>
                 <li class="pagenav" onclick="cssbutton(2)">
                     <div class="pagenavdiv"></div>
-                    <p class="pagenavp">소대헌</p>
+                    <p class="pagenavp">수원화성</p>
                 </li>
                 <li class="pagenav" onclick="cssbutton(3)">
                     <div class="pagenavdiv"></div>
-                    <p class="pagenavp">수원화성</p>
+                    <p class="pagenavp">고인돌</p>
                 </li>
                 <li class="pagenav" onclick="cssbutton(4)">
                     <div class="pagenavdiv"></div>
-                    <p class="pagenavp">고인돌</p>
+                    <p class="pagenavp">통도사</p>
                 </li>
                 <li class="pagenav" onclick="cssbutton(5)">
                     <div class="pagenavdiv"></div>
-                    <p class="pagenavp">통도사</p>
+                    <p class="pagenavp">공룡화석지</p>
                 </li>
                 <li class="pagenav" onclick="cssbutton(6)">
                     <div class="pagenavdiv"></div>
@@ -391,30 +395,33 @@
 
         <div class="swiper mySwiper page-nav mo">
             <ul class="swiper-wrapper">
-                <li class="swiper-slide pagenav" onclick="cssbutton(0)" id="on">
+                <!-- <li class="swiper-slide pagenav" onclick="cssbutton(0)" id="on">
                     <div class="pagenavdiv" id="on"></div>
                     <p class="pagenavp" id="on">start</p>
+                </li> -->
+                <li class="swiper-slide pagenav" onclick="cssbutton(0)"id="on">
+                    <div class="pagenavdiv"id="on"></div>
+                    <p class="pagenavp"id="on">6.25 전쟁</p>
                 </li>
                 <li class="swiper-slide pagenav" onclick="cssbutton(1)">
                     <div class="pagenavdiv"></div>
-                    <p class="pagenavp">6.25 전쟁</p>
+                    <p class="pagenavp">소대헌</p>
                 </li>
                 <li class="swiper-slide pagenav" onclick="cssbutton(2)">
                     <div class="pagenavdiv"></div>
-                    <p class="pagenavp">소대헌</p>
+                    <p class="pagenavp">수원화성</p>
                 </li>
                 <li class="swiper-slide pagenav" onclick="cssbutton(3)">
                     <div class="pagenavdiv"></div>
-                    <p class="pagenavp">수원화성</p>
+                    <p class="pagenavp">고인돌</p>
                 </li>
                 <li class="swiper-slide pagenav" onclick="cssbutton(4)">
                     <div class="pagenavdiv"></div>
-                    <p class="pagenavp">고인돌</p>
+                    <p class="pagenavp">통도사</p>
                 </li>
                 <li class="swiper-slide pagenav" onclick="cssbutton(5)">
                     <div class="pagenavdiv"></div>
-                    <p class="pagenavp">통도사</p>
-                </li>
+                    <p class="pagenavp">공룡화석지</p>
                 <li class="swiper-slide pagenav" onclick="cssbutton(6)">
                     <div class="pagenavdiv"></div>
                     <p class="pagenavp">한양도성</p>
@@ -514,7 +521,26 @@
                 </div>
             </div>
             <i class="fas fa-times"></i>
+
         </div>
+
+         <!--con button test-->
+         <div class= "conbutton-bg">
+            <div class = "conbutton">
+                <h2>conbutton test</h2>
+                <button onclick = "closeConButton()"><h1>close</h1></button>
+                <div></div>
+                <div class="sketchfab-embed-wrapper"> 
+                    <iframe class= "url2" title="택견_숨쉬기" 
+                    width="1000" height="600"
+                    frameborder="0" 
+                    mozallowfullscreen="true" 
+                    webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking"
+                    xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src=""> </iframe> 
+                </div>
+            </div>
+        </div>
+
 
 
     </div>

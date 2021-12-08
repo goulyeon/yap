@@ -53,7 +53,7 @@
     <script src="Build/UnityLoader.js"></script>
     <script>
         UnityLoader.SystemInfo.mobile = false;  // Workaround to force `UnityLoader` to actually load on mobile.
-        window.gameInstance = UnityLoader.instantiate('gameContainer', 'Build/MainBuild1103.json', {
+        window.gameInstance = UnityLoader.instantiate('gameContainer', 'Build/1128MainLobby07.json', {
             Module: {
                 // `preserveDrawingBuffer` is needed for WebVR content to be mirrored to the `<canvas>`.
                 webglContextAttributes: {
@@ -368,19 +368,19 @@
         <!-- 페이지네비 피씨 -->
         <div class="page-nav pc">
             <ul>
-                <li class="on pagenav" onclick = "cssbutton(0)">
+                <!-- <li class="on pagenav" onclick = "cssbutton(0)">
                     <div class="on pagenavdiv" ></div>
                     <p class="on pagenavp">start</p>
+                </li> -->
+                <li class="on pagenav" onclick = "cssbutton(0)">
+                    <div class="on pagenavdiv"></div>
+                    <p class="on pagenavp">무형유산</p>
                 </li>
                 <li class="pagenav" onclick = "cssbutton(1)">
-                    <div class="pagenavdiv"></div>
-                    <p class="pagenavp">무형유산</p>
-                </li>
-                <li class="pagenav" onclick = "cssbutton(2)">
                     <div class=" pagenavdiv"></div>
                     <p class="pagenavp">자연유산</p>
                 </li>
-                <li class="pagenav" onclick = "cssbutton(3)">
+                <li class="pagenav" onclick = "cssbutton(2)">
                     <div class=" pagenavdiv"></div>
                     <p class="pagenavp">유형유산</p>
                 </li>
@@ -389,19 +389,19 @@
         <!-- 페이지네비 모바일 -->
         <div class="swiper mySwiper page-nav mo">
             <ul class="swiper-wrapper">
-                <li class="swiper-slide on pagenav" onclick="cssbutton(0)" id="on">
+                <!-- <li class="swiper-slide on pagenav" onclick="cssbutton(0)" id="on">
                     <div class="on pagenavdiv" id="on"></div>
                     <p class="on pagenavp" id="on">start</p>
+                </li> -->
+                <li class="swiper-slide on pagenav" onclick="cssbutton(0)"  id="on">
+                    <div class="on pagenavdiv"  id="on"></div>
+                    <p class="on pagenavp"  id="on">무형유산</p>
                 </li>
                 <li class="swiper-slide pagenav" onclick="cssbutton(1)">
                     <div class="pagenavdiv"></div>
-                    <p class="pagenavp">무형유산</p>
-                </li>
-                <li class="swiper-slide pagenav" onclick="cssbutton(2)">
-                    <div class="pagenavdiv"></div>
                     <p class="pagenavp">자연유산</p>
                 </li>
-                <li class="swiper-slide pagenav" onclick="cssbutton(3)">
+                <li class="swiper-slide pagenav" onclick="cssbutton(2)">
                     <div class="pagenavdiv"></div>
                     <p class="pagenavp">유형유산</p>
                 </li>
