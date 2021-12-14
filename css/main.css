@@ -350,11 +350,6 @@ body{
 .video-pop-bg i:hover{color: #FF7B54;}
 
 .conbutton-bg{
-    /* position: fixed; z-index: 50;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    display: none; */
 
     width: 74vw; height: 60vh;
     position: fixed;
@@ -374,10 +369,10 @@ body{
     overflow-y: auto;
 }
 video {
-    display: block;
+    /* display: block;
     max-width: 80%;
-    margin: 20px auto;
-  }
+    margin: 20px auto; */
+}
 
 
 @media (min-width: 481px) and (max-width: 670px) {

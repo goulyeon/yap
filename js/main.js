@@ -108,9 +108,6 @@ function cssbutton(num) {
 var PageNav = document.getElementsByClassName("pagenav");
 var PageNavDiv = document.getElementsByClassName("pagenavdiv");
 var PageNavP = document.getElementsByClassName("pagenavp");
-console.log("PageNav.length : " + PageNav.length);
-console.dir(document.getElementsByClassName("pagenav"));
-
 
 function CamPositionToPageNav(x){
         console.log("CamPositionToPageNav : " + x);
@@ -145,8 +142,11 @@ const boxbg = document.getElementsByClassName("conbutton-bg");
 var box = document.getElementsByClassName("url2");
 //con 버튼
 function Asset3DButtonJs(str){ //3D Asset버튼
-    if(!window.isInVRSession)//VR이 아니면
+    if(!window.xrManager.isInVRSession)//VR이 아니면
     {
+        boxbg[0].style.display="flex";
+        console.log("Asset3DButtonJs : " + str);
+
         switch(str)
         {
             case "택견":
@@ -176,12 +176,96 @@ function Asset3DButtonJs(str){ //3D Asset버튼
     else
     {
         console.log("Asset3DButtonJs isImmersive 아님");
-        //unity에 전달해서 videoplayer setActive true 로 만들기 
-        gameInstance.SendMessage('MouseWheelMove', 'CSSButton', num);// ?  이거 왜쓴거야
+        console.log("Asset3DButtonJs In VR :" + str);
         switch(str)
         {
             case "택견":
-                gameInstance.SendMessage('VideoCanvas', 'ShowVideoQuad');
+                var url = "택견/scene.gltf";
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonURL',url);
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonLoadScene','Model3DViewer');
+                break;
+            case "판소리":
+                var url = "택견/scene.gltf";
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonURL', url);
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonLoadScene', 'Model3DViewer');
+                break;
+            case "판소리":
+                var url = "택견/scene.gltf";
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonURL', url);
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonLoadScene', 'Model3DViewer');
+                break;
+            case "만구대탁굿":
+                var url = "택견/scene.gltf";
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonURL', url);
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonLoadScene', 'Model3DViewer');
+                break;
+            case "처용무":
+                var url = "택견/scene.gltf";
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonURL', url);
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonLoadScene', 'Model3DViewer');
+                break;
+            case "수문장":
+                var url = "택견/scene.gltf";
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonURL', url);
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonLoadScene', 'Model3DViewer');
+                break;
+            //유형
+            case "6.25":
+                var url = "택견/scene.gltf";
+                gameInstance.SendMessage('TangibleCamPosition', 'ConbuttonURL', url);
+                gameInstance.SendMessage('TangibleCamPosition', 'ConbuttonLoadScene', 'Model3DViewer');
+                break;    
+            default:
+                console.log("디폴트 입니다");
+                break;    
+        }
+        
+    }
+}
+
+function VR360ButtonJs(str){ //360VR 버튼
+    console.log("thisXRMananger.isInVRSession : " + window.xrManager.isInVRSession);
+    if(!window.xrManager.isInVRSession)//VR이 아니면
+    {
+        boxbg[0].style.display="flex";
+        console.log("VR360ButtonJs : " + str);
+        switch(str)
+        {
+            default:
+                box[0].src = "";
+                break;    
+        }
+    }   
+    else
+    {
+        console.log("VR360ButtonJs isImmersive 아님");
+        console.log("VR360ButtonJs In VR :" + str);
+        switch(str)
+        {
+            case "택견":
+                var url = "택견.mp4";
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonURL',url);
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonLoadScene','360Video');
+                break;
+            case "판소리":
+                var url = "택견.mp4";
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonURL',url);
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonLoadScene','360Video');
+                break;
+            case "굿":
+                var url = "택견.mp4";
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonURL',url);
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonLoadScene','360Video');
+                break;
+            case "처용무":
+                var url = "택견.mp4";
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonURL',url);
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonLoadScene','360Video');
+                break;
+            case "수문장":
+                var url = "택견.mp4";
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonURL',url);
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonLoadScene','360Video');
                 break;
             default:
                 console.log("디폴트 입니다");
@@ -189,17 +273,68 @@ function Asset3DButtonJs(str){ //3D Asset버튼
         }
         
     }
-    console.log("Asset3DButtonJs : " + str);
-    boxbg[0].style.display="flex";
-}
-
-function VR360ButtonJs(str){ //360VR 버튼
-    console.log("VR360ButtonJs : " + str);
 
 }
 
 function ThreeFaceVideoJs(str){ //3면 버튼
-    console.log("ThreeFaceVideoJs : " + str);
+    console.log("thisXRMananger.isInVRSession : " + window.xrManager.isInVRSession);
+    if(!window.xrManager.isInVRSession)//VR이 아니면
+    {
+        boxbg[0].style.display="flex";
+        console.log("ThreeFaceVideoJs : " + str);
+        switch(str)
+        {
+            default:
+                box[0].src = "";
+                break;    
+        }
+    }   
+    else
+    {
+        console.log("ThreeFaceVideoJs isImmersive 아님");
+        console.log("ThreeFaceVideoJs In VR :" + str);
+        switch(str)
+        {
+            case "첩종의식":
+                var url =  "택견 VR.mp4";
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonURL',url);
+                gameInstance.SendMessage('IntangibleCamPosition', 'ConbuttonLoadScene','360Video');
+                break;
+
+            //자연
+            case "설악산 꽃자리":
+                var url = "0sound.mp4";
+                gameInstance.SendMessage('NaturalCamposition', 'ConbuttonURL', url);
+                gameInstance.SendMessage('NaturalCamposition', 'ConbuttonLoadScene', 'Video');
+                break;
+            case "반딧불이와 춤을":
+                var url = "0sound.mp4";
+                gameInstance.SendMessage('NaturalCamposition', 'ConbuttonURL', url);
+                gameInstance.SendMessage('NaturalCamposition', 'ConbuttonLoadScene', 'Video');
+                break; 
+            case "을숙도 대탐험":
+                var url = "0sound.mp4";
+                gameInstance.SendMessage('NaturalCamposition', 'ConbuttonURL', url);
+                gameInstance.SendMessage('NaturalCamposition', 'ConbuttonLoadScene', 'Video');
+                break; 
+            case "조선왕릉숲길":
+                var url = "0sound.mp4";
+                gameInstance.SendMessage('NaturalCamposition', 'ConbuttonURL', url);
+                gameInstance.SendMessage('NaturalCamposition', 'ConbuttonLoadScene', 'Video');
+                break; 
+            case "한반도 자연유산":
+                var url = "0sound.mp4";
+                gameInstance.SendMessage('NaturalCamposition', 'ConbuttonURL', url);
+                gameInstance.SendMessage('NaturalCamposition', 'ConbuttonLoadScene', 'Video');
+                break; 
+            case "디지털 병풍":
+                var url = "0sound.mp4";
+                gameInstance.SendMessage('NaturalCamposition', 'ConbuttonURL', url);
+                gameInstance.SendMessage('NaturalCamposition', 'ConbuttonLoadScene', 'Video');
+                break;
+
+        }
+    }
 
 }
 
@@ -209,7 +344,37 @@ function MediaArtJs(str){//미디어아트 버튼
 }
 
 function VideoJs(str){//동영상버튼
-    console.log("VideoJs : " + str);
+    console.log("thisXRMananger.isInVRSession : " + window.xrManager.isInVRSession);
+    if(!window.xrManager.isInVRSession)//VR이 아니면
+    {
+        boxbg[0].style.display="flex";
+        console.log("VideoJs : " + str);
+        switch(str)
+        {
+            default:
+                box[0].src = "";
+                break;    
+        }
+    }   
+    else
+    {
+        console.log("VideoJs isImmersive 아님");
+        console.log("VideoJs In VR :" + str);
+        switch(str)
+        {
+            //유형
+            case "6.25":
+                var url = "6.25.mp4";
+                gameInstance.SendMessage('TangibleCamPosition', 'ConbuttonURL',url);
+                gameInstance.SendMessage('TangibleCamPosition', 'ConbuttonLoadScene','360Video');
+                break;
+
+            default:
+                console.log("디폴트 입니다");
+                break;    
+        }
+        
+    }
 
 }
 
@@ -217,18 +382,100 @@ function ASMRJs(str){//디지털병풍버튼
     console.log("ASMRJs : " + str);
 }
 
-function ARUnityJs(str){//디지털병풍버튼
+function ARJs(str){//디지털병풍버튼
     console.log("ARUnityJs : " + str);
 }
-function RealVRUnityJs(str){//디지털병풍버튼
-    console.log("RealVRUnityJs : " + str);
+function RealVRJs(str){//디지털병풍버튼
+    console.log("thisXRMananger.isInVRSession : " + window.xrManager.isInVRSession);
+    if(!window.xrManager.isInVRSession)//VR이 아니면
+    {
+        boxbg[0].style.display="flex";
+        console.log("RealVRUnityJs : " + str);
+        switch(str)
+        {
+            default:
+                box[0].src = "";
+                break;    
+        }
+    }   
+    else
+    {
+        console.log("RealVRUnityJs isImmersive 아님");
+        console.log("RealVRUnityJs In VR :" + str);
+        switch(str)
+        {
+            //유형
+            case "6.25":
+                var url = "택견 VR.mp4";//test
+                gameInstance.SendMessage('TangibleCamPosition', 'ConbuttonURL',url);
+                gameInstance.SendMessage('TangibleCamPosition', 'ConbuttonLoadScene','360Video');
+                break;
+
+            default:
+                console.log("디폴트 입니다");
+                break;    
+        }
+        
+    }
 }
+
 function closeConButton(){
     boxbg[0].style.display="none";
     box[0].src ="";
     console.log("close")
 }
 
+
+
+//메뉴버튼
+function IntangibleButtonJs(){
+    //getURL("무형유산");
+    location.href= "intangible.html";
+}
+
+function NaturalButtonJs(){
+    //getURL("자연유산");
+    location.href= "natural.html";
+    //location.herf ="natural.html";
+
+}
+function TangibleButtonJs(){
+    //getURL("유형유산");
+    location.href= "tangible.html";
+
+    //location.herf ="tangible.html";
+
+}
+function Menu3DAssetButtonJs(){
+    
+}
+function Menu360VRButtonJs(){
+    
+}
+function MainLobbyButtonJs(){
+    location.href= "index.html";
+
+}
+function SoundButtonJs(){
+    
+}
+function VoiceButtonJs(){
+    
+}
+function CCButtonJs(){
+    
+}
+function VROffButtonJs(){
+    console.log("vr off button");
+    //window.xrManager.onEndSession();
+    window.xrManager.toggleVR();
+}
+function KRButtonJs(){
+    
+}
+function ENButtonJs(){
+    
+}
 
 
 

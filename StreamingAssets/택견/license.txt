@@ -1,0 +1,11 @@
+Model Information:
+* title:	택견_생활택견 준비동작
+* source:	https://sketchfab.com/3d-models/--04158af4fcdb4d6db43fd6ca4e575779
+* author:	한국문화재재단 (https://sketchfab.com/kor_heritage)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "택견_생활택견 준비동작" (https://sketchfab.com/3d-models/--04158af4fcdb4d6db43fd6ca4e575779) by 한국문화재재단 (https://sketchfab.com/kor_heritage) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

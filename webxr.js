@@ -15,12 +15,6 @@
     this.enterXRButton = document.getElementById('enterxr');
     this.gameContainer = document.getElementById('game');
     this.perfStatus = document.getElementById('performance');
-
-    this.enterXRButton2 = document.getElementById('testxr');
-
-
-    console.dir( this.enterXRButton2);
-
     // Unity GameObject name which we will SendMessage to
     this.unityObjectName = 'WebXRCameraSet';
 
@@ -94,7 +88,7 @@
       session.isImmersive = true;
       this.isInVRSession = true;
       this.vrSession = session;
-      console.log("session.isInVRSession : " +this.isInVRSession );
+      console.log("session.isInVRSession : " +this.isInVRSession);
       this.onSessionStarted(session);
     });
   }
@@ -372,8 +366,6 @@
     {
       this.canvas.width = glLayer.framebufferWidth;
       this.canvas.height = glLayer.framebufferHeight;
-      console.dir(this.canvas);
-
     }
 
     this.ctx.bindFramebuffer(this.ctx.FRAMEBUFFER, glLayer.framebuffer);
